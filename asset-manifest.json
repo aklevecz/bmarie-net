@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/bmarie-net/static/css/main.799fde26.chunk.css",
-    "main.js": "/bmarie-net/static/js/main.649e9ad8.chunk.js",
-    "main.js.map": "/bmarie-net/static/js/main.649e9ad8.chunk.js.map",
+    "main.css": "/bmarie-net/static/css/main.be3493ec.chunk.css",
+    "main.js": "/bmarie-net/static/js/main.489893b2.chunk.js",
+    "main.js.map": "/bmarie-net/static/js/main.489893b2.chunk.js.map",
     "runtime-main.js": "/bmarie-net/static/js/runtime-main.54d4d03c.js",
     "runtime-main.js.map": "/bmarie-net/static/js/runtime-main.54d4d03c.js.map",
     "static/js/2.24ce3118.chunk.js": "/bmarie-net/static/js/2.24ce3118.chunk.js",
     "static/js/2.24ce3118.chunk.js.map": "/bmarie-net/static/js/2.24ce3118.chunk.js.map",
     "index.html": "/bmarie-net/index.html",
-    "static/css/main.799fde26.chunk.css.map": "/bmarie-net/static/css/main.799fde26.chunk.css.map",
+    "static/css/main.be3493ec.chunk.css.map": "/bmarie-net/static/css/main.be3493ec.chunk.css.map",
     "static/js/2.24ce3118.chunk.js.LICENSE.txt": "/bmarie-net/static/js/2.24ce3118.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.54d4d03c.js",
     "static/js/2.24ce3118.chunk.js",
-    "static/css/main.799fde26.chunk.css",
-    "static/js/main.649e9ad8.chunk.js"
+    "static/css/main.be3493ec.chunk.css",
+    "static/js/main.489893b2.chunk.js"
   ]
 }
