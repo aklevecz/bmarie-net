@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import * as contentful from "contentful";
 
+const accessToken = "yIwMebq5Mhdp3PQbS-h4_T7RWP5LsprSLjnobyn22Ws";
+const SPACE_ID = "90qprjmlum8i";
 function App() {
+  const [entries, setEntries] = useState([]);
+  const [groups, setGroups] = useState([]);
+  const [activeGroup, setActiveGroup] = useState("");
+  useEffect(() => {
+    const client = contentful.createClient({
+      space: SPACE_ID,
+      accessToken,
+    });
+    client.getEntries().then((r: any) => {
+      const entries = r.items.map((i: any) => i.fields);
+      const groups = entries.reduce((acc: string[], currentValue: any) => {
+        if (acc.indexOf(currentValue.group) < 0) {
+          return [...acc, currentValue.group];
+        }
+        return acc;
+      }, []);
+      setGroups(groups);
+      setEntries(entries);
+      console.log(entries);
+      setActiveGroup(groups[0]);
+    });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      {groups.map((group: any) => (
+        <div
+          onClick={() => setActiveGroup(group)}
+          className={`link ${group} ${activeGroup === group ? "active" : ""}`}
         >
-          Learn React
-        </a>
-      </header>
+          {group}
+        </div>
+      ))}
+      {entries
+        .filter((entry: any) => entry.group === activeGroup)
+        .map((entry: any) => (
+          <img
+            style={{ width: "100%" }}
+            alt="fuck"
+            src={entry.image.fields.file.url}
+          ></img>
+        ))}
     </div>
   );
 }
